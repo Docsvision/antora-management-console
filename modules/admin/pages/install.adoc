@@ -64,7 +64,9 @@ include::install-linux:ROOT:partial$restart-and-db.adoc[]
 --
 
 [#settings-service]
-include::settings-service:admin:install.adoc[leveloffset=+1]
+== Установка {of-sett-serv} на сервер {of-mc}
+
+Установите {of-sett-serv} на сервер {of-mc}. Инструкция по установке {of-sett-serv} приведена в разделе "xref:6.1@settings-service:admin:install.adoc[]" документации {of-sett-serv}.
 
 [#external-api]
 == Установка сервиса внешнего API
@@ -199,7 +201,7 @@ WARNING: Без выполнения данных настроек аутент�
 <.> `LdapOptions` -- настройки подключения к LDAP каталогу домена.
 <.> `LdapServerAddresses` -- адреса серверов LDAP данного домена. Если адрес соответствует полному имени домену, параметр можно удалить.
 <.> `AuthType` -- тип аутентификации в LDAP.
-<.> `Credential` -- логин и пароль пользователя для подключения к LDAP-каталогам текущего домена. Пароль для подключения можно зашифровать, см. подробнее в документации по установке системы, раздел "xref:install-linux:ROOT:appendix/account-protection.adoc[]".
+<.> `Credential` -- логин и пароль пользователя для подключения к LDAP-каталогам текущего домена. Пароль для подключения можно зашифровать, см. подробнее в документации по установке системы, раздел "xref:dv6@engineer:ROOT:appendix/account-protection.adoc[]".
 <.> `FullDomainName` -- полное имя домена указывается в формате `user@example.com` учётной записи после `@`.
 <.> `ChallengeTo` -- настройка позволяет переадресовывать запросы от выбранного домена к каталогам указанного домена, см. <<challengeto,далее>>.
 
@@ -226,7 +228,7 @@ WARNING: Без выполнения данных настроек аутент�
 <.> `LdapServerAddresses` -- адреса серверов LDAP данного домена. Если адрес соответствует полному имени домену, параметр можно удалить.
 <.> `AuthType` -- тип аутентификации в LDAP.
 <.> `Port` -- порт подключения к LDAP каталогам, перечисленным в `LdapServerAddresses`.
-<.> `Credential` -- логин и пароль пользователя для подключения к LDAP-каталогам текущего домена. Пароль для подключения можно зашифровать, см. подробнее в документации по установке системы, раздел "xref:install-linux:ROOT:appendix/account-protection.adoc[]".
+<.> `Credential` -- логин и пароль пользователя для подключения к LDAP-каталогам текущего домена. Пароль для подключения можно зашифровать, см. подробнее в документации по установке системы, раздел "xref:dv6@engineer:ROOT:appendix/account-protection.adoc[]".
 
 include::6.1@platform:admin:config-domains.adoc[tags=chalto]
 
