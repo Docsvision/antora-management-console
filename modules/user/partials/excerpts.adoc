@@ -34,7 +34,7 @@ WARNING: Обратите внимание, версия устанавлива�
 include::workerservice:admin:launch.adoc[tags=cpus]
 ====
 +
-// * Расширение для WorkerService -- расширение для модуля _Служба {ws}_, название может отличаться в зависимости от заданного во время xref:dv6@programmer:WebClient:other/sample-worker-extension.adoc[разработки расширения]. Представляет собой отдельный конфигурационный файл в формате `.json`, помещаемый в папку расширений Консоли управления `menu:ManagementConsole[SampleExtensions]`.
+* Расширение для WorkerService -- расширение для модуля _Служба {ws}_, название может отличаться в зависимости от заданного во время xref:dv6@programmer:WebClient:other/sample-worker-extension.adoc[разработки расширения]. Представляет собой отдельный конфигурационный файл в формате `.json`, помещаемый в папку расширений Консоли управления `menu:ManagementConsole[SampleExtensions]`.
 // end::name-config[]
 
 //tag::context[]
