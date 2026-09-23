@@ -14,6 +14,12 @@ include::GBL-3610@engineer:ROOT:partial$excerpts.adoc[tags=nlog-json]
 ----
 {
   "NLog": {
+    "throwConfigExceptions": false, <.>
+    "extensions": [ <.>
+    { "assembly": "DocsVision.Something" },
+    { "assembly": "NLog.Extensions.Logging" },
+    { "assembly": "NLog.Web.AspNetCore" }
+    ],
     "variables": { <.>
       "fileLogLevel": "Error", <.>
       "consoleLogLevel": "Error", <.>
@@ -24,18 +30,34 @@ include::GBL-3610@engineer:ROOT:partial$excerpts.adoc[tags=nlog-json]
         "includeAllProperties": true, <.>
         "attributes": [ <.>
           {
-          "name": "timestamp", <.>
-          "layout": "${date:format=yyyy-MM-dd HH\\:mm\\:ss.fff}" <.>
+            "name": "timestamp", <.>
+            "layout": "${date:format=yyyy-MM-dd HH\\:mm\\:ss.fff}" <.>
+          },
+          {
+            "name": "level",
+            "layout": "${level:upperCase=true}"
+          },
+          {
+            "name": "module",
+            "layout": "${logger}"
+          },
+          {
+            "name": "message",
+            "layout": "${message}"
+          },
+          {
+            "name": "processId",
+            "layout": "${processid}"
           }
         ]
       }
     },
     "targets": { <.>
+      "async": true, <.>
       "logFile": { <.>
         "type": "File", <.>
-        "fileName": "${gdc:baseLogFolder}/docsvision/managementconsole/${shortdate}_ManagementConsole.log", <.>
-        "layout": "[${longdate}][${level}][${callsite}] ${message} ${exception:format=tostring,Data}", <.>
-        "logConsole": { "type": "Console" }, <.>
+        "fileName": "${gdc:docsvisionLogFolder}/${gdc:moduleName}/${gdc:moduleName}.log", <.>
+        "layout": "${var:jsonLayout}", <.>
         "archiveEvery": "Day", <.>
         "archiveAboveSize": 314572800, <.>
         "archiveFileName": "${gdc:docsvisionLogFolder}/${gdc:moduleName}/archives/${gdc:moduleName} {#}.log", <.>
@@ -69,6 +91,11 @@ include::GBL-3610@engineer:ROOT:partial$excerpts.adoc[tags=nlog-json]
   }
 }
 ----
+<.> `throwConfigExceptions` -- определяет поведение приложения при обнаружении ошибок в конфигурации NLog.
++
+Если параметр установлен в `true`, любая ошибка в конфигурации вызовет исключение.
++
+<.> `extensions` -- загружает дополнительные сборки (`.dll`), расширяющие возможности NLog.
 <.> `variables` -- раздел определяет параметры, которые используются в других частях конфигурации.
 <.> `fileLogLevel` -- задаёт уровень журналирования для файла журнала.
 <.> `consoleLogLevel` -- задаёт уровень журналирования для консоли (stdout/stderr).
