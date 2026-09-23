@@ -3,7 +3,7 @@
 
 = Журнал работы {of-mc}
 
-Технические журналы Консоли управления и {of-sett-serv} можно посмотреть в каталоге `/var/log/docsvision/managementconsole` для Linux и `C:\ProgramData\Docsvision\ManagementConsole` для Windows.
+Технические журналы {of-mc} можно посмотреть в каталоге `/var/log/docsvision/managementconsole` для Linux и `C:\ProgramData\Docsvision\ManagementConsole` для Windows.
 
 include::GBL-3610@engineer:ROOT:partial$excerpts.adoc[tags=nlog-json]
 
