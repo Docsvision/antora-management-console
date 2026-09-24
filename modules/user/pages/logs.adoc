@@ -16,7 +16,6 @@ include::GBL-3610@engineer:ROOT:partial$excerpts.adoc[tags=nlog-json]
   "NLog": {
     "throwConfigExceptions": false, <.>
     "extensions": [ <.>
-    { "assembly": "DocsVision.Something" },
     { "assembly": "NLog.Extensions.Logging" },
     { "assembly": "NLog.Web.AspNetCore" }
     ],
