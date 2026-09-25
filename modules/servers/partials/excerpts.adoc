@@ -1,3 +1,7 @@
+// tag::new-logging[]
+NOTE: Настройка удалена из {of-mc}, начиная с версии {mc-log-req} в связи с переводом журналирования модуля {log-module} на формат JSON, см. подробнее xref:{log-link}.
+// end::new-logging[]
+
 // tag::will-be-crypted[]
 NOTE: При настроенном шифровании данные для подключения к БД будут перезаписаны на зашифрованные.
 // end::will-be-crypted[]
