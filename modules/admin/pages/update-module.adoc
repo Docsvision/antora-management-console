@@ -6,6 +6,11 @@
 
 include::webclient:ROOT:partial$excerpts.adoc[tags=what-changed]
 
+[WARNING]
+====
+Формат строки подключения к {to-sett-serv} и  путь к настройкам {of-sett-serv}, указываемым в `appsettings.json`, обновлены. Начиная с {mc-config-req}, строку подключения (`ConnectionString`) и ключ API (`ApiKey`) {of-sett-serv} рекомендуется указывать в секции "menu:DocsVision[SettingsService]". Адрес рекомендуется указывать без префикса `ConnectAddress=`. Прежний формат также поддерживается.
+====
+
 include::6.1@platform:admin:partial$update-conditions.adoc[]
 
 include::6.1@platform:admin:partial$update.adoc[]

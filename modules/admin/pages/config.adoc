@@ -24,10 +24,12 @@ endif::windows[]
 [source,json]
 ----
 {
+"DocsVision": {
   "SettingsService": {
-    "ConnectionString": "ConnectAddress=http://settings.domain.com:5200/api", <.>
+    "ConnectionString": "http://settings.domain.com:5200/api", <.>
     "ApiKey": "SettingsServiceApiKey" <.>
-  },
+  }
+},
   "System": {
     "ManagementConsoleAddress": "http://console.domain.com:5100" <.>
   },
