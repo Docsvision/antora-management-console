@@ -50,7 +50,6 @@
 *** xref:webclient-etc.adoc[]
 ** xref:workflow.adoc[]
 *** xref:workflow-connection.adoc[]
-*** xref:workflow-logging.adoc[]
 *** xref:workflow-templates.adoc[]
 *** xref:workflow-etc.adoc[]
 ** xref:fileservice.adoc[]
